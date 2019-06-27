@@ -44,7 +44,8 @@ AppAsset::register($this);
                 'items' => [
                                     ['label' => 'Ciclistas', 'url' => ['/ciclista/consulta']],
                                     ['label' => 'Ciclistas(edad)', 'url' =>['/ciclista/consulta1']],
-                                     ['label' => 'Ciclistas(edad-Artiach)', 'url' =>['/ciclista/consulta2']],
+                                    ['label' => 'Ciclistas(edad-Artiach)', 'url' =>['/ciclista/consulta2']],
+                                    ['label' => 'Ciclistas(edad-Artiach-Amore Vita)', 'url' =>['/ciclista/consulta3']],
                             ],
     ],    
            

@@ -98,7 +98,11 @@ class CiclistaController extends Controller
     }
      public function actionConsulta2(){
  
-        $consulta = Ciclista::find()->select("edad")->distinct()->where("nomequipo = 'Artiach'");
+        $consulta = Ciclista::find()
+                ->distinct()
+                ->select("edad")
+                ->where("nomequipo = 'Artiach'");
+                     //(["nomequipo"=>'Artiach']);
 
          $dataProvider = new ActiveDataProvider([
              'query' => $consulta,
@@ -109,6 +113,24 @@ class CiclistaController extends Controller
          ]);
         
     }
+     public function actionConsulta3(){
+ 
+        $consulta = Ciclista::find()
+                ->distinct()
+                ->select("edad")
+                ->where("nomequipo = 'Artiach' or nomequipo='Amore Vita'");
+                     //(["nomequipo"=>'Artiach']);
+
+         $dataProvider = new ActiveDataProvider([
+             'query' => $consulta,
+         ]);
+
+         return $this->render('index_4', [
+            'datos' => $dataProvider, 
+         ]);
+        
+    }
+    
     public function actionIndex()
     {
         $searchModel = new CiclistaSearch();
